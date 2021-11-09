@@ -27,7 +27,7 @@
  * code structure and how to use the kit.
  */
 systime_t idle_led_timer;
-
+//TEST
 int main(void){
 	//Generate a compiler error on invalid #define statements
 	BUILD_BUG_ON(AUDIO_SAMPLE_RATE != 16000 && AUDIO_SAMPLE_RATE != 24000 && AUDIO_SAMPLE_RATE != 48000);
