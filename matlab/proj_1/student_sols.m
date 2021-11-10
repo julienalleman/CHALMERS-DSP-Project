@@ -9,7 +9,7 @@ function [funs, student_id] = student_sols()
 % Should a numeric value of format YYYYMMDD, e.g.
 % student_id = 19900101;
 % This value must be correct in order to generate a valid secret key.
-student_id = 0;
+student_id = 19981210;
 
 
 % ----------------------------------------
@@ -23,13 +23,14 @@ student_id = 0;
 	function z = add_cyclic_prefix(x,Ncp)  %#ok<*INUSD>
 		% Adds (prepends) a Ncp long cyclic prefix to the ofdm block x.
 		x = x(:);   %#ok<*NASGU> % Ensure x is a column vector
-		z = 0; %TODO: This line is missing some code!
+        
+		z = [x(end-Ncp+1:end); x]; %TODO: This line is missing some code!
     end
 
     function x = remove_cyclic_prefix(z,Ncp)
         % Removes a Ncp long cyclic prefix from the ofdm package z
         z = z(:);   % Ensure z is a column vector
-        x = 0; %TODO: This line is missing some code!
+        x = z(Ncp+1:end); %TODO: This line is missing some code!
     end
 
     function symb = bits2qpsk(bits)
@@ -57,8 +58,11 @@ student_id = 0;
         if rem(length(bits),2) == 1
             error('bits must be of even length');
         end
-
-        symb = 0; %TODO: This line is missing some code!
+        symb=[];
+        for i=0:1:length(bits)/2-1
+            
+            symb = [symb ; sqrt(2)/2*complex(bits(2*i+1),bits(2*i+2))]; %TODO: This line is missing some code!
+        end 
     end
 
     function bits  = qpsk2bits(x)
@@ -73,8 +77,8 @@ student_id = 0;
         % first bit corresponds to the real part of the symbol while the
         % second bit corresponds to the imaginary part of the symbol.
 
-        bits(1:2:end) = 0; %TODO: This line is missing some code!
-        bits(2:2:end) = 0; %TODO: This line is missing some code!
+        bits(1:2:end) = real(x)>0; %TODO: This line is missing some code!
+        bits(2:2:end) = imag(x)>0; %TODO: This line is missing some code!
         
         % Ensure output is of correct type
         % zero value -> logical zero
@@ -188,7 +192,7 @@ student_id = 0;
         if(length(txData) ~= length(txPilot))
             error('Pilot and data are not of the same length!');
         end
-        txFrame = 0; %TODO: This line is missing some code!
+        txFrame = [txPilot;txData]; %TODO: This line is missing some code!
     end
 
     function [rxPilot, rxData] = split_frame(rxFrame)
@@ -198,8 +202,8 @@ student_id = 0;
             error('Vector z must have an even number of elements'); 
         end
         N = length(rxFrame);
-        rxPilot = 0; %TODO: This line is missing some code!
-        rxData = 0; %TODO: This line is missing some code!
+        rxPilot = rxFrame(1:N/2); %TODO: This line is missing some code!
+        rxData = rxFrame(N/2+1:end); %TODO: This line is missing some code!
     end
 
     function [rx, evm, ber, symbs] = sim_ofdm_unknown_channel(tx, h, N_cp, snr, sync_err)
