@@ -1,0 +1,59 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "D:/DSP/CHALMERS-DSP-Project/dspkit/include",
+                "D:/DSP/CHALMERS-DSP-Project/dspkit/src",
+                "D:/DSP/CHALMERS-DSP-Project/dspkit/src/backend/CMSIS/Include",
+                "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/cmsis/cores/stm32",
+                "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/cmsis/variants/stm32f4",
+                "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/spl/variants/stm32f4/inc",
+                "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/spl/variants/stm32f4/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "D:/DSP/CHALMERS-DSP-Project/dspkit/include",
+                    "D:/DSP/CHALMERS-DSP-Project/dspkit/src",
+                    "D:/DSP/CHALMERS-DSP-Project/dspkit/src/backend/CMSIS/Include",
+                    "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/cmsis/cores/stm32",
+                    "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/cmsis/variants/stm32f4",
+                    "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/spl/variants/stm32f4/inc",
+                    "C:/Users/julie/.platformio/packages/framework-spl@1.10201.0/stm32/spl/variants/stm32f4/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "F_CPU=168000000L",
+                "STM32F407XX",
+                "PLATFORMIO=50203",
+                "STM32F4",
+                "STM32F407xx",
+                "STM32F40_41xxx",
+                "USE_STDPERIPH_DRIVER",
+                "HSE_VALUE=8000000ULL",
+                "ARM_MATH_CM4",
+                "__FPU_PRESENT",
+                "printf=printfn",
+                "SSY130_DEVKIT",
+                ""
+            ],
+            "compilerPath": "C:/Users/julie/.platformio/packages/toolchain-gccarmnoneeabi@1.40804.0/bin/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mthumb",
+                "-mcpu=cortex-m4",
+                "-mfpu=fpv4-sp-d16",
+                "-mfloat-abi=softfp",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
