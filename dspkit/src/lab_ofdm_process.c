@@ -275,7 +275,11 @@ void cnvt_re_im_2_cmplx( float * pRe, float * pIm, float * pCmplx, int length ){
 		DO_OFDM_RE_IM_2_CMPLX();
 #else
 	/* TODO: Add code from here... */
-
+	int i;
+	for ( i = 0; i < length ;i++) {
+		pCmplx[2*i] = pRe[i];
+		pCmplx[2*i+1] = pIm[2*i+1];
+	}
 	/* ...to here */
 #endif
 }

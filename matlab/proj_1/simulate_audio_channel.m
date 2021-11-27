@@ -52,7 +52,7 @@ ch_b = [50, 6000]*2/f_s;
 
 % Generate channel impulse response
 h = impz(b, a);
-
+h=1;
 %freqz(h); %Execute to display the simulated channel gain/phase response
 
 y = conv(h, y);
