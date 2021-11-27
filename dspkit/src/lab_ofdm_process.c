@@ -278,7 +278,7 @@ void cnvt_re_im_2_cmplx( float * pRe, float * pIm, float * pCmplx, int length ){
 	int i;
 	for ( i = 0; i < length ;i++) {
 		pCmplx[2*i] = pRe[i];
-		pCmplx[2*i+1] = pIm[2*i+1];
+		pCmplx[2*i+1] = pIm[i];
 	}
 	/* ...to here */
 #endif
@@ -320,7 +320,13 @@ void ofdm_conj_equalize(float * prxMes, float * prxPilot,
 	* vector of up to length elements. */
 	
 	/* TODO: Add code from here...*/
+	float ptxPilot_conj[length];
+	float hhat[length];
+	arm_cmplx_conj_f32(ptxPilot,ptxPilot_conj,length);
+	arm_cmplx_mult_cmplx_f32(ptxPilot_conj,prxPilot,hhat,length);
+	arm_cmplx_conj_f32(hhat,hhat_conj,length);
 
+	arm_cmplx_mult_cmplx_f32(prxMes,hhat_conj,pEqualized,length);
 	/* ...to here */
 #endif
 }
