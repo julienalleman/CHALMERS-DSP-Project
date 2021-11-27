@@ -2,5 +2,6 @@
     "files.associations": {
         "board.h": "c",
         "headphone.h": "c"
-    }
+    },
+    "C_Cpp.dimInactiveRegions": false
 }

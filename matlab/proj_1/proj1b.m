@@ -86,7 +86,7 @@ funs = student_sols();
 % project report.
 
 N = 272;         % Number of OFDM (QPSK) symbols to transmit.   
-N_cp = 60;       % Length of cyclic prefix
+N_cp = 100;       % Length of cyclic prefix
 snr = inf;       % Receiver side SNR [dB]
 sync_err = 0;    % Negative values imply early frame sync
 f_s = 16e3;      % Sample rate of upsampled system [Hz]
